@@ -1,62 +1,106 @@
+/*===================== GOOGLE FONTS ====================*/
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Raleway:wght@500;600;700&display=swap');
+
+/*====================== VARIABLES CSS =====================*/
 :root {
-    --color-gradient-1: #3206B0;
-    --color-gradient-2: #487EE1;
-    --color-gradient-3: #5FFBF1;
-    --color4: #a99ee6;
-    --color5: #f4d5ed;
+    --first-color: #121639;
+    --second-color: #121c41;
+    --third-color: #ff0022;
+    --text-color: #FFF;
+    --title-color: #ff0022;
+
+
+    /*=============== FONT AND TYPOGRAPHY ===============*/
+    --body-font: 'Open Sans', sans-serif;
+    --title-font: 'Raleway', sans-serif;
+    --biggest-font-size: 2.5rem;
+    --h1-font-size: 1.5rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1rem;
+    --normal-font-size: .938rem;
+    --small-font-size: .813rem;
+    --smaller-font-size: .75rem;
+
+    /*=============== FONT WEIGHT ===============*/
+    --font-medium: 500;
+    --font-semi-bold: 600;
+
+    /*=============== MARGENES BOTTOM ===============*/
+    --mb-0-25: .25rem;
+    --mb-0-5: .5rem;
+    --mb-0-75: .75rem;
+    --mb-1: 1rem;
+    --mb-1-25: 1.25rem;
+    --mb-1-5: 1.5rem;
+    --mb-2: 2rem;
+    --mb-2-5: 2.5rem;
 }
 
-html,
+/*================== BASE =====================*/
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+html{
+    scroll-behavior: smooth;
+}
+
 body {
     position: relative;
-    height: 100%;
-}
-
-body {
-    font-size: 10px;
-    color: #000;
     margin: 0;
-    background: #eee;
-    /* background: linear-gradient(-45deg, var(--color-gradient-1), var(--color-gradient-2), var(--color-gradient-3)); */
-    background-size: 300% 300%;
-    animation: gradient 8s ease infinite;
     padding: 0;
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    color: var(--text-color);
+
 }
 
+h1, h2, h3{
+    color: var(--text-color);
+    font-weight: var(--font-semi-bold);
+    font-family: var(--title-font);
+}
+ul{
+    list-style: none;
+}
 
+a{
+    text-decoration: none;
+}
+
+img, video{
+    max-width: 100%;
+    height: auto;
+}
+
+.highlighted__content{
+    color: var(--third-color);
+    font-weight: var(--font-semi-bold);
+}
+
+/*=============== PARTICLES ==============*/
+#particles-js {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: -100;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+/*=============== SWIPER ================*/
 .swiper-container {
-    top: 2%;
-    width: 98%;
-    height: 95%;
-    border-radius: 12px;
+    width: 100%;
+    height: 100vh;
+    border-radius: 15px;
 }
 
-.main{
-    background: linear-gradient(-45deg, var(--color-gradient-1), var(--color-gradient-2), var(--color-gradient-3));
-	background-size: 400% 400%;
-	animation: gradient 15s ease infinite;
-}
-
-@keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
-}
 .swiper-slide {
     box-shadow: 0 10px 10px 0 rgba( 31, 38, 135, 0.37 );
-    backdrop-filter: blur( 1.5px );
-    -webkit-backdrop-filter: blur( 1.5px );
+    /* backdrop-filter: blur( 1.5px );
+    -webkit-backdrop-filter: blur( 1.5px ); */
     border-radius: 12px;
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
-    font-size: 18px;
-
-  /* Center slide text vertically */
+    /* Center slide text vertically */
     display: -webkit-box;
     display: -ms-flexbox;
     display: -webkit-flex;
@@ -71,9 +115,36 @@ body {
     align-items: center;
 }
 
+.main{
+    background: var(--first-color);
+}
+
+.main-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .profile__photo{
     width: 8rem;
     height: auto;
     border-radius: 50%;
-    border: 4px solid rgba(255, 255, 255, 0.3);
+    border: 4px solid rgba(255, 255, 255, 0.7);
+    margin-bottom: var(--mb-1);
+}
+
+.main__data-title{
+    font-size: var(--biggest-font-size);
+    text-align: center;
+    margin-bottom: var(--mb-0-25);
+}
+
+.main__data-subtitle{
+    font-size: var(--h2-font-size);
+    margin-bottom: var(--mb-0-25);
+}
+
+.main__data-information{
+    font-size: var(--normal-font-size);
+    text-align: center;
 }
